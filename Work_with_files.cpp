@@ -4,7 +4,7 @@
 
 using namespace std;
 
-//Функция заполнения массива слов
+//Р¤СѓРЅРєС†РёСЏ Р·Р°РїРѕР»РЅРµРЅРёСЏ РјР°СЃСЃРёРІР° СЃР»РѕРІ
 void FillWordsArray(string*& array, string row, int lenght) {
 	int j = 0;
 	for (int i = 0; i < lenght; i++) {
@@ -18,13 +18,13 @@ void FillWordsArray(string*& array, string row, int lenght) {
 	}
 };
 
-//Функция разделение строки на слова
+//Р¤СѓРЅРєС†РёСЏ СЂР°Р·РґРµР»РµРЅРёРµ СЃС‚СЂРѕРєРё РЅР° СЃР»РѕРІР°
 void SplitRow(string row, string*& array, int lenght) {
 	array = new string[lenght];
 	FillWordsArray(array, row, lenght);
 };
 
-//Функция подсчёта кол-ва слов в строке
+//Р¤СѓРЅРєС†РёСЏ РїРѕРґСЃС‡С‘С‚Р° РєРѕР»-РІР° СЃР»РѕРІ РІ СЃС‚СЂРѕРєРµ
 int WordsCount(string row) {
 	bool flag = false;
 	int i = 0, count = 0;
@@ -43,7 +43,7 @@ int WordsCount(string row) {
 	return count;
 };
 
-//Функция проверки на наличие  одинаковых слов
+//Р¤СѓРЅРєС†РёСЏ РїСЂРѕРІРµСЂРєРё РЅР° РЅР°Р»РёС‡РёРµ РѕРґРёРЅР°РєРѕРІС‹С… СЃР»РѕРІ
 bool HasDoubles(string*& array, int lenght) {
 	for (int i = 0; i < lenght; i++) {
 		for (int j = i + 1; j < lenght; j++) {
@@ -55,10 +55,10 @@ bool HasDoubles(string*& array, int lenght) {
 	return false;
 };
 
-//Функция подсчета кол-ва гласных букв в строке
+//Р¤СѓРЅРєС†РёСЏ РїРѕРґСЃС‡РµС‚Р° РєРѕР»-РІР° РіР»Р°СЃРЅС‹С… Р±СѓРєРІ РІ СЃС‚СЂРѕРєРµ
 void NumberOfVowels(string row) { 
 	int count=0;
-	string Vowels = {"АЕЁИОУЫЭЮЯаеёиоуыэюя"};
+	string Vowels = {"РђР•РЃРРћРЈР«Р­Р®РЇР°РµС‘РёРѕСѓС‹СЌСЋСЏ"};
 	for (int i = 0; i < size(row); i++) {
 		for (int j = 0; j < size(Vowels); j++) {
 			if (row[i] == Vowels[j]) {
@@ -67,10 +67,10 @@ void NumberOfVowels(string row) {
 		}
 	}
 	if (count==0){
-		cout << "\nПервая строкa из F2.txt [" << row << "] не содержит гласных букв.\n";
+		cout << "\nРџРµСЂРІР°СЏ СЃС‚СЂРѕРєa РёР· F2.txt [" << row << "] РЅРµ СЃРѕРґРµСЂР¶РёС‚ РіР»Р°СЃРЅС‹С… Р±СѓРєРІ.\n";
 	}
 	else {
-		cout << "\nПервая строкa из F2.txt [" << row << "] содержит " << count << " гласные буквы.\n";
+		cout << "\nРџРµСЂРІР°СЏ СЃС‚СЂРѕРєa РёР· F2.txt [" << row << "] СЃРѕРґРµСЂР¶РёС‚ " << count << " РіР»Р°СЃРЅС‹Рµ Р±СѓРєРІС‹.\n";
 	}
 };
 
@@ -98,12 +98,12 @@ int main()
 			NumberOfVowels(row);
 		}
 		else {
-			cout << "Ошибка! Не удалось открыть файл F2.txt.";
+			cout << "РћС€РёР±РєР°! РќРµ СѓРґР°Р»РѕСЃСЊ РѕС‚РєСЂС‹С‚СЊ С„Р°Р№Р» F2.txt.";
 		}
 		file.close();
 	}
 	else {
-		cout << "Ошибка! Не удалось открыть файл F1.txt.";
+		cout << "РћС€РёР±РєР°! РќРµ СѓРґР°Р»РѕСЃСЊ РѕС‚РєСЂС‹С‚СЊ С„Р°Р№Р» F1.txt.";
 	}
 	ifile.close();
 	system("pause");
